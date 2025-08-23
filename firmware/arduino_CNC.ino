@@ -8,34 +8,28 @@
 
 char STEP = MICROSTEP ;
 
-// Servo position for Up and Down 
 const int penZUp = 120;
 const int penZDown = 50;
 
-// Servo on PWM pin 10
 const int penServoPin =10 ;
 
-// Should be right for DVD steppers, but is not too important here
 const int stepsPerRevolution = 48; 
 
-// create servo object to control a servo 
 Servo penServo;  
 
-// Initialize steppers for X- and Y-axis using this Arduino pins for the L293D H-bridge
 AF_Stepper myStepperY(stepsPerRevolution,1);            
 AF_Stepper myStepperX(stepsPerRevolution,2);  
 
-/* Structures, global variables    */
+
 struct point { 
   float x; 
   float y; 
   float z; 
 };
 
-// Current position of plothead
+
 struct point actuatorPos;
 
-//  Drawing settings, should be OK
 float StepInc = 1;
 int StepDelay = 1;
 int LineDelay =0;
@@ -407,3 +401,4 @@ void penDown() {
     
   } 
 }
+
