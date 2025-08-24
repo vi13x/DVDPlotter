@@ -35,14 +35,9 @@ int StepDelay = 1;
 int LineDelay =0;
 int penDelay = 50;
 
-// Motor steps to go 1 millimeter.
-// Use test sketch to go 100 steps. Measure the length of line. 
-// Calculate steps per mm. Enter here.
 float StepsPerMillimeterX = 100.0;
 float StepsPerMillimeterY = 100.0;
 
-// Drawing robot limits, in mm
-// OK to start with. Could go up to 50 mm if calibrated well. 
 float Xmin = 0;
 float Xmax = 40;
 float Ymin = 0;
@@ -54,30 +49,17 @@ float Xpos = Xmin;
 float Ypos = Ymin;
 float Zpos = Zmax; 
 
-// Set to true to get debug output.
 boolean verbose = false;
 
-//  Needs to interpret 
-//  G1 for moving
-//  G4 P300 (wait 150ms)
-//  M300 S30 (pen down)
-//  M300 S50 (pen up)
-//  Discard anything with a (
-//  Discard any other command!
 
-/**********************
- * void setup() - Initialisations
- ***********************/
 void setup() {
-  //  Setup
-  
+
   Serial.begin( 9600 );
   
   penServo.attach(penServoPin);
   penServo.write(penZUp);
   delay(100);
 
-  // Decrease if necessary
   myStepperX.setSpeed(600);
 
   myStepperY.setSpeed(600);  
@@ -401,4 +383,5 @@ void penDown() {
     
   } 
 }
+
 
