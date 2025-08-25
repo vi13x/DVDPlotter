@@ -65,7 +65,8 @@ void setup() {
   myStepperY.setSpeed(600);  
 
 
-  //  Notifications!!!
+
+  
   Serial.println("Mini CNC Plotter alive and kicking!");
   Serial.print("X range is from "); 
   Serial.print(Xmin); 
@@ -380,6 +381,7 @@ void penDown() {
     
   } 
 }
+
 
 
 
