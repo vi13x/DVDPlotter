@@ -63,10 +63,7 @@ void setup() {
   myStepperX.setSpeed(600);
 
   myStepperY.setSpeed(600);  
-  
 
-  //  Set & move to initial default position
-  // TBD
 
   //  Notifications!!!
   Serial.println("Mini CNC Plotter alive and kicking!");
@@ -383,5 +380,6 @@ void penDown() {
     
   } 
 }
+
 
 
